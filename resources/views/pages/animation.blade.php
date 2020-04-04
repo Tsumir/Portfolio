@@ -1,7 +1,20 @@
 @extends('layouts.header')
 
 @section('content')
-    <div id="xl" class="mx-auto col-lg-6" style="padding: 0 !important;   overflow: hidden;     ">
+    <style>
+        .gitlinks a {
+            color: #636b6f;
+            font-size: 16px;
+            font-style: italic;
+        }
+    </style>
+    <div class="col-lg-3 p-0 text-left gitlinks">
+        <div class="pl-4">
+            <h3 class="my-0">Links:</h3>
+            <a href="https://github.com/Tsumir/Portfolio/blob/master/resources/views/pages/animation.blade.php">github.com/js</a>
+        </div>
+    </div>
+    <div id="xl" class="col-lg-6" style="padding: 0 !important;   overflow: hidden;     ">
         <div class="hiding" style="background-color: #FFFFFF;">
             <div id="back1" style="background-image: url('storage/eco/back.png'); background-repeat: no-repeat; background-size:100%; width: 1280px; height: 560px; position: relative;">
                 <div id="mask" style="background-color:white; position: absolute; height: 140px; top:150px; width:50px; z-index: 150;"></div>
