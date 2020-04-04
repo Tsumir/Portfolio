@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="996d59c3-b83f-40f1-bd89-c2f45df02024" name="Default Changelist" comment="" />
+    <list default="true" id="996d59c3-b83f-40f1-bd89-c2f45df02024" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/getgallery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +20,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,6 +126,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZxN4FrLagwrTXrk9ufAWcIcZGZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -122,22 +134,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\laravel\storage\app\public" />
-      <recent name="C:\wamp64\www\laravel\storage\app" />
-      <recent name="C:\wamp64\www\laravel\storage" />
-      <recent name="C:\wamp64\www\laravel\public" />
-      <recent name="C:\wamp64\www\laravel\public\storage" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\laravel\storage\app\public" />
       <recent name="C:\wamp64\www\laravel\resources\img" />
       <recent name="C:\wamp64\www\laravel\public\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\laravel\storage\app\public" />
+      <recent name="C:\wamp64\www\laravel\storage\app\public\js" />
+      <recent name="C:\wamp64\www\laravel\storage\app" />
+      <recent name="C:\wamp64\www\laravel\storage" />
+      <recent name="C:\wamp64\www\laravel\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -165,7 +178,7 @@
       <workItem from="1585947714923" duration="2294000" />
       <workItem from="1585950026621" duration="5176000" />
       <workItem from="1586011086825" duration="17518000" />
-      <workItem from="1586030710963" duration="3563000" />
+      <workItem from="1586030710963" duration="7475000" />
     </task>
     <servers />
   </component>
@@ -197,6 +210,11 @@
           <url>file://$PROJECT_DIR$/resources/views/admin/pages/create.blade.php</url>
           <line>6</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pages/gallery.blade.php</url>
+          <line>3</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

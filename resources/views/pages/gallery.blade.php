@@ -7,11 +7,21 @@
         background-color: rgba(27, 33, 37, 0.77);
         z-index: 9999;
         }
+        .gitlinks a {
+            color: #636b6f;
+            font-size: 13px;
+            font-style: italic;
+        }
     </style>
-    
+
     <div class="row m-0 align-items-center big_photo" style="height: 100%"></div>
     <div id="information"></div>
-    <div class="col-lg-6 p-0 mx-auto">
+    <div class="col-lg-3 p-0 text-right gitlinks">
+        <img src="storage/icn/git.png" style="height: 50px">
+        <a href="https://github.com/Tsumir/Portfolio/blob/master/resources/views/pages/gallery.blade.php">github.com/Tsumir/Portfolio/blob/master/resources/views/pages/gallery.blade.php</a>
+        <a href="https://github.com/Tsumir/Portfolio/blob/master/app/Http/Controllers/AjaxController.php">github.com/Tsumir/Portfolio/blob/master/app/Http/Controllers/AjaxController.php</a>
+    </div>
+    <div class="col-lg-6 p-0">
         <div id="my_gallery" class=""></div>
     </div>
     <script>
@@ -134,5 +144,6 @@
         });
 
     </script>
+
 
 @endsection
