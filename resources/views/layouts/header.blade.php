@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -12,16 +13,20 @@
     <script src = "https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <script>
-        $(document).ready (function (){
-            /*$.ajax({
-                type:'GET',
-                url:'/getmsg',
-                data:'_token = <?php echo csrf_token() ?>',
-                success:function(data){
-                    $("#information").html(data.msg);
+        $(document).ready(function () {
+            $.ajax({
+                url:"/posts/countAjax/1",
+                type:"get",
+                data:'_token = <?php echo csrf_token() ?> ',
+                dataType: "json",
+                success: function (data) {
+                    $("#cart-count").html(data);
+                    $("#cart-count_fixed").html(data);
+                    $("#cart-countsm").html(data);
+                    $("#cart-count_fixedsm").html(data);
                 }
-            });*/
-        });
+            });
+        })
     </script>
 
     <!-- Fonts -->
@@ -31,6 +36,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="/css/mystyle.css">
      <!-- Style HOMEPAGE-->
     <style>
         html, body {
@@ -93,21 +99,22 @@
                     <a class="nav-link" href="/">{{ config('app.name', 'Portfolio') }}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="laravel">Laravel</a>
+                    <a class="nav-link" href="{{ asset('posts') }}">Laravel</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         JS,PHP,AJAX,CSS
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="gallery">Галлерея</a>
+                        <a class="dropdown-item" href="{{ asset('gallery') }}">Галлерея</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="animation">Анимации</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="{{ asset('animation') }}">Анимации</a>
                     </div>
                 </li>
             </ul>
+            <a href="{{ asset('cart') }}" class="btn btn-dark">
+                Избранное <span id="cart-count" class="badge badge-light">0</span>
+            </a>
             <ul class="nav justify-content-end">
                 @guest
                     <li class="nav-item">
@@ -139,11 +146,38 @@
                 @endguest
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-                <button class="btn btn-dark my-2 my-sm-0" type="submit">Поиск</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search" id="search">
+                <script>
+                    $('#search').keyup(function(){
+                        $("#resSearch").empty();
+                        var Value = $('#search').val();
+                        $.ajax({
+                            url:"/getsearch/"+Value,
+                            type:"GET",
+                            data:'_token = <?php echo csrf_token() ?>',
+                            dataType: "json",
+                            success: funcSuccess1
+                        });
+                    });
+                    function funcSuccess1(data) {
+                        var xy = Object.values($('#search').offset());
+                        var widthScreen = document.documentElement.scrollWidth;
+                        var divWidth = widthScreen - xy[1] + $('#search').width();
+                        $("#resSearch").css({"left": xy[1]-$('#search').width()+"px", "top":"56px", "width":divWidth+"px"});
+                        var ids = data.length - 1;
+                        var result = new Array();
+                        $("#resSearch").empty();
+                        for(var i = 0; i<=ids; i++){
+                            result[i] = Object.values(data[i]);
+                            $('#resSearch').append('<li class="rowSearch"><a href="/posts/viewpost/'+result[i][0]+'"><div class="d-flex justify-content-between"><div>'+result[i][1]+'</div><div>#'+result[i][0]+'</div><div>'+result[i][2]+'</div></div></a></li>');
+                        }
+                    }
+                </script>
             </form>
         </div>
     </nav>
+    <div id="resSearch" style="position: absolute; z-index:100;"><ul id="resSearch" class="" style="background-color: #343a40;"></ul>
+    </div>
 </head>
 
 <body>
@@ -151,5 +185,7 @@
         @yield('content')
     </div>
 </body>
+
+
 
 

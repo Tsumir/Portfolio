@@ -21,10 +21,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('admin-panel','PostsController');
+Route::resource('posts','PostsController');
 
-
+Route::get('cart','PostsController@cart');
+Route::get('cart/clean','PostsController@cartClean');
 Route::get('/getmsg','AjaxController@index');
+Route::get('/getsearch/{val}','AjaxController@search');
+Route::get('/posts/addAjax/{id}','PostsController@addProduct');
+Route::get('/posts/delAjax/{id}','PostsController@delProduct');
+Route::get('/posts/countAjax/{id}','PostsController@countProduct');
+Route::get('/posts/viewpost/{id}','PostsController@viewProduct');
 
 Route::get('/gallery', function () {
     return view('pages.gallery');

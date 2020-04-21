@@ -17,7 +17,9 @@ class CreatePostsTable extends Migration
 
             $table->increments('id');
             $table->string('title');
-            $table->text('content');
+            $table->text('cardtext');
+            $table->string('color');
+            $table->integer('author_id')->nullable();
             $table->timestamps();
 
         });

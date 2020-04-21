@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class AjaxController extends Controller {
@@ -45,5 +46,10 @@ class AjaxController extends Controller {
             $data = 'Картинок не найдено, всё очень плохо:(';
             echo json_encode($data);
         }
+    }
+
+    public function search($val){
+        $posts = DB::table('posts')->where('cardtext','like','%'.$val.'%')->get();
+        echo json_encode($posts);
     }
 }

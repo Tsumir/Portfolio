@@ -1,0 +1,61 @@
+.rowSearch{
+    border-bottom: 1px solid #000000;
+    color: #f8fafc;
+    list-style: none;
+}
+.rowSearch:hover{
+    background-color: #b3b5b7;
+}
+.rowSearch a {
+    text-decoration: none;
+    color: #343a40 ;
+}
+.card {
+    border: 1px solid #c6c8ca;
+}
+.card-header h1{
+    font-size: x-large;
+}
+.black-color {
+    background-color: #343a40;
+}
+.black-color h1{
+    color: #f8fafc;
+}
+.white-color {
+    background-color: #f8fafc;
+}
+.white-color h1{
+    color: #343a40;
+}
+.red-color {
+    background-color: #a5052f;
+}
+.red-color h1{
+    color: #f8fafc;
+}
+.blue-color {
+    background-color: #1b2294;
+}
+.blue-color h1{
+    color: #f8fafc;
+}
+.in-cart {
+    color: #f8fafc;
+}
+.card-body p{
+    font-size: large;
+    color: #343a40;
+}
+.tag h2{
+    margin: 0;
+    font-size: medium;
+    font-style: italic;
+}
+.tag{
+    padding: 1rem;
+}
+.card-body {
+
+    border-bottom: 1px solid #c6c8ca;
+}

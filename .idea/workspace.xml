@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="996d59c3-b83f-40f1-bd89-c2f45df02024" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/mystyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/pages/cart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/pages/viewpost.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/posts-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/animation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/animation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/gallery.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AjaxController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_04_01_225228_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_04_01_225228_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +33,13 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,6 +143,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/laravelcollective/html" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ZxN4FrLagwrTXrk9ufAWcIcZGZ" />
@@ -129,11 +154,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -142,11 +169,11 @@
       <recent name="C:\wamp64\www\laravel\public\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\laravel\public\css" />
       <recent name="C:\wamp64\www\laravel\storage\app\public" />
       <recent name="C:\wamp64\www\laravel\storage\app\public\js" />
       <recent name="C:\wamp64\www\laravel\storage\app" />
       <recent name="C:\wamp64\www\laravel\storage" />
-      <recent name="C:\wamp64\www\laravel\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -174,7 +201,23 @@
       <workItem from="1585947714923" duration="2294000" />
       <workItem from="1585950026621" duration="5176000" />
       <workItem from="1586011086825" duration="17518000" />
-      <workItem from="1586030710963" duration="9286000" />
+      <workItem from="1586030710963" duration="10563000" />
+      <workItem from="1586045917140" duration="1341000" />
+      <workItem from="1586180704067" duration="31000" />
+      <workItem from="1586180745636" duration="1285000" />
+      <workItem from="1586266458881" duration="28126000" />
+      <workItem from="1586300009739" duration="7914000" />
+      <workItem from="1586351029193" duration="26360000" />
+      <workItem from="1586432876233" duration="26005000" />
+      <workItem from="1586474376671" duration="134000" />
+      <workItem from="1586741745927" duration="269000" />
+      <workItem from="1586870646163" duration="2858000" />
+      <workItem from="1586958198207" duration="599000" />
+      <workItem from="1586959793791" duration="4827000" />
+      <workItem from="1586991512330" duration="1198000" />
+      <workItem from="1587059762910" duration="1293000" />
+      <workItem from="1587490031808" duration="944000" />
+      <workItem from="1587490986519" duration="609000" />
     </task>
     <servers />
   </component>
@@ -186,18 +229,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586024533953" />
-    <state x="657" y="205" width="620" height="629" key="#phpunit.xml" timestamp="1586024543337">
+    <state x="640" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587490917006">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="205" width="620" height="629" key="#phpunit.xml/0.0.1920.1040@0.0.1920.1040" timestamp="1586024543337" />
-    <state x="794" y="451" key="NewPhpFileDialog" timestamp="1586020251458">
+    <state x="640" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587490917006" />
+    <state x="690" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586381890690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="451" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586020251458" />
+    <state x="690" y="278" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586381890690" />
+    <state x="657" y="205" width="620" height="629" key="#phpunit.xml" timestamp="1586293360995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="657" y="205" width="620" height="629" key="#phpunit.xml/0.0.1920.1040@0.0.1920.1040" timestamp="1586293360995" />
+    <state x="598" y="118" key="CommitChangelistDialog2" timestamp="1586435188491">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586435188491" />
+    <state x="1290" y="347" key="NewPhpClassDialog" timestamp="1586269609893">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1290" y="347" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586269609893" />
+    <state x="794" y="451" key="NewPhpFileDialog" timestamp="1586966934539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="451" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586966934539" />
+    <state x="463" y="165" key="SettingsEditor" timestamp="1587490895546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="463" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587490895546" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585841922693">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585841922693" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1586280759991">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586280759991" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586442949165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586442949165" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,5 +7,6 @@
             </div>
         </div>
     </div>
+    <script>document.body.style.overflow = 'hidden';</script>
 @endsection
 

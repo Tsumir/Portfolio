@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Posts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use PhpParser\Node\Expr\Array_;
+
 
 class PostsController extends Controller
 {
@@ -11,11 +16,50 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.admin-index');
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+        }
+        $posts = DB::table('posts')->orderBy('id','asc')->get();
+        return view('posts.posts-index', ['posts'=>$posts,'ids'=>$ids]);
+    }
+    public function viewProduct(Request $request, $id){
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+        }
+        $post = Posts::find($id);
+        return view('posts.pages.viewpost', ['post'=>$post, 'ids'=>$ids]);
     }
 
+    public function cart(Request $request)
+    {
+        $ids = $request->session()->all();
+
+        unset($ids['_token'] );
+        unset($ids['_previous'] );
+        unset($ids['_flash'] );
+        $first_key = array_key_first($ids);
+        if(!is_int($first_key)){
+            unset($ids[$first_key]);
+        }
+        $posts = DB::table('posts')->orderBy('id','asc')->whereIn('id',$ids)->get();
+        return view('posts.pages.cart', ['posts'=>$posts]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +68,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.create');
+
     }
 
     /**
@@ -35,7 +79,31 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Posts();
+
+        $post->title = $request->title;
+        $post->cardtext = $request->cardtext;
+        $post->color = $request->color;
+        if($request->author_id){
+            $post->author_id = $request->author_id;
+        }
+        if($post->title && $post->cardtext){
+            $post->save();
+        }
+
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+        }
+
+        $posts = DB::table('posts')->orderBy('id','asc')->get();
+        return view('posts.posts-index', ['posts'=>$posts,'ids'=>$ids]);
     }
 
     /**
@@ -78,8 +146,111 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $post = Posts::find($id);
+        if ($post) {
+            $post->delete();
+        }
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            $val = array_search($id, $ids);
+            if(is_int($val)){
+                $request->session()->pull($val);
+            }
+            $ids = $request->session()->all();
+
+            unset($ids['_token']);
+            unset($ids['_previous']);
+            unset($ids['_flash']);
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+        }
+        $posts = DB::table('posts')->orderBy('id','asc')->get();
+        return view('posts.posts-index', ['posts'=>$posts,'ids'=>$ids]);
     }
+
+    public function addProduct(Request $request, $id)
+    {
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+            $key = count($ids)+1;
+        }
+        else {
+            $key = 0;
+        }
+        $request->session()->put($key,$id);
+
+
+        echo json_encode($key);
+    }
+
+    public function delProduct(Request $request, $id)
+    {
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            $val = array_search($id,$ids);
+            $request->session()->pull($val);
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+            $key = count($ids);
+        }
+        else {
+            $key = 0;
+        }
+        echo json_encode($key);
+    }
+
+    public function cartClean(Request $request)
+    {
+        $ids = $request->session()->all();
+        unset($ids['_token']);
+        unset($ids['_previous']);
+        unset($ids['_flash']);
+        $first_key = array_key_first($ids);
+        if(!is_int($first_key)){
+            unset($ids[$first_key]);
+        }
+        $key = count($ids);
+        for ($i=0; $i<=$key; $i++) {
+            $request->session()->pull($i);
+        }
+        $posts = array();
+        return view('posts.pages.cart',['posts'=>$posts]);
+    }
+
+    public function countProduct(Request $request)
+    {
+        if($request->hasSession()){
+            $ids = $request->session()->all();
+            unset($ids['_token'] );
+            unset($ids['_previous'] );
+            unset($ids['_flash'] );
+            $first_key = array_key_first($ids);
+            if(!is_int($first_key)){
+                unset($ids[$first_key]);
+            }
+            $key = count($ids);
+        }
+        else {
+            $key = 0;
+        }
+        echo json_encode($key);
+    }
+
 }
